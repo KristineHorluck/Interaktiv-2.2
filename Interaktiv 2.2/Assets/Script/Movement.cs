@@ -5,23 +5,18 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    public float speed;
+    public float Speed;
 
-    private Rigidbody rd;
-  void start()
+     Rigidbody rb;
+  void Start()
     {
-        rd = GetComponent<Rigidbody>();
-
+         rb = GetComponent<Rigidbody>();
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {
-        float Horizontal = Input.GetAxis("Horizontal");
-        float Vertical = Input.GetAxis("Vertical");
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
 
-        Vector3 move = new Vector3(Horizontal, 0.0f, Vertical);
-
-        rd.AddForce(move * speed);
+        rb.MovePosition(transform.position + move * Time.deltaTime * Speed);
     }
 }
