@@ -6,11 +6,13 @@ public class Movement : MonoBehaviour
 {
 
     public float Speed;
+    public float thrust = 1.0f;
 
-     Rigidbody rb;
+    public Rigidbody rb;
   void Start()
     {
          rb = GetComponent<Rigidbody>();
+        rb.AddForce(0, 0, thrust, ForceMode.Impulse);
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -19,4 +21,6 @@ public class Movement : MonoBehaviour
 
         rb.MovePosition(transform.position + move * Time.deltaTime * Speed);
     }
+   
+   
 }

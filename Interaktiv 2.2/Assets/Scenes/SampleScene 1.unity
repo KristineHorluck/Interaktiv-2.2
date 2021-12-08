@@ -420,8 +420,9 @@ GameObject:
   - component: {fileID: 719486450}
   - component: {fileID: 719486449}
   - component: {fileID: 719486448}
+  - component: {fileID: 719486453}
   m_Layer: 0
-  m_Name: Water
+  m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +437,7 @@ Rigidbody:
   m_GameObject: {fileID: 719486447}
   serializedVersion: 2
   m_Mass: 100
-  m_Drag: 0
+  m_Drag: 0.64
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -513,12 +514,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719486447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.85, y: 2.84, z: 7.17}
+  m_LocalPosition: {x: 7.52, y: 2.84, z: 7.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &719486453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719486447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39eceda1401fdb4db4dcdc302beaeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceMagnitude: 15000
 --- !u!1 &830110936
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +547,7 @@ GameObject:
   - component: {fileID: 830110938}
   - component: {fileID: 830110937}
   m_Layer: 0
-  m_Name: Wood
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,7 +639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830110936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.81, y: 2.84, z: -4.69}
+  m_LocalPosition: {x: 4.81, y: 2.84, z: -5.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -919,7 +933,7 @@ GameObject:
   - component: {fileID: 972955037}
   - component: {fileID: 972955036}
   m_Layer: 0
-  m_Name: Water
+  m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1011,7 +1025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972955035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.77, y: 2.84, z: -5.6381736}
+  m_LocalPosition: {x: -4.77, y: 1.65, z: -2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1031,7 +1045,7 @@ GameObject:
   - component: {fileID: 1108055677}
   - component: {fileID: 1108055676}
   m_Layer: 0
-  m_Name: Dirt
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,7 +1137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108055675}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.77, y: 2.84, z: 7.98}
+  m_LocalPosition: {x: -3.05, y: 2.84, z: 7.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1238,7 +1252,7 @@ GameObject:
   - component: {fileID: 1384713724}
   - component: {fileID: 1384713723}
   m_Layer: 0
-  m_Name: Stone
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1330,7 +1344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384713722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.95, y: 2.84, z: 4.74}
+  m_LocalPosition: {x: 2.82, y: 2.84, z: 4.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1351,6 +1365,7 @@ GameObject:
   - component: {fileID: 1563505200}
   - component: {fileID: 1563505199}
   - component: {fileID: 1563505205}
+  - component: {fileID: 1563505206}
   m_Layer: 0
   m_Name: pLAYER
   m_TagString: Untagged
@@ -1371,6 +1386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
+  thrust: 1
+  rb: {fileID: 0}
 --- !u!54 &1563505200
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1478,6 +1495,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turn: {x: 0, y: 0}
   sensitivity: 0.5
+--- !u!114 &1563505206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563505198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39eceda1401fdb4db4dcdc302beaeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceMagnitude: 0
 --- !u!1 &1619575963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1522,7 @@ GameObject:
   - component: {fileID: 1619575965}
   - component: {fileID: 1619575964}
   m_Layer: 0
-  m_Name: Iron
+  m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1584,7 +1614,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619575963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.77, y: 7.48, z: -2.52}
+  m_LocalPosition: {x: -1.77, y: 2.86, z: 2.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
