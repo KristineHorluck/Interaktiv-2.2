@@ -6,20 +6,21 @@ public class Movement : MonoBehaviour
 {
 
     public float Speed;
-    public float thrust = 1.0f;
 
     public Rigidbody rb;
   void Start()
     {
          rb = GetComponent<Rigidbody>();
-        rb.AddForce(0, 0, thrust, ForceMode.Impulse);
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+        Vector3 move = transform.right * Input.GetAxisRaw("Horizontal") + transform.forward * Input.GetAxisRaw("Vertical");
+        move.Normalize();
+        move *= Speed;
+        move += new Vector3(0, rb.velocity.y, 0);
+        rb.velocity = move;
 
-        rb.MovePosition(transform.position + move * Time.deltaTime * Speed);
     }
    
    
